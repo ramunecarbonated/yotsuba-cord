@@ -1,0 +1,290 @@
+/* Yotsuba Blue */
+/* :root {
+    --bg-color: #eef2ff;
+    --main-color: #d6daf0;
+    --border-color: #b7c5d9;
+    --text-color: #000000;
+    --link-color: #34345c;
+    --link-hover-color: #dd0000;
+    --greentext: #789922;
+} */
+/* Yotsuba */
+/* :root {
+    --bg-color: #ffffee;
+    --main-color: #f0e0d6;
+    --border-color: #d9bFb7;
+    --text-color: #800000;
+    --link-color: #0000ee;
+    --link-hover-color: #dd0000;
+    --greentext: #789922;
+} */
+/* Yotsuba Purple */
+/* :root {
+    --bg-color: #f8f3fe;
+    --main-color: #eeddff;
+    --border-color: #cab7d9;
+    --text-color: #000000;
+    --link-color: #962594;
+    --link-hover-color: #b22caa;
+    --greentext: #789922;
+} */
+/* Tomorrow */
+:root {
+    --bg-color: #1d1f21;
+    --main-color: #282a2e;
+    --border-color: #373b41;
+    --text-color: #c5c8c6;
+    --link-color: #81a2be;
+    --link-hover-color: #cc6666;
+    --greentext: #b5bd68;
+}
+
+/* greentexting with `...` */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] code.inline {
+    color: var(--greentext);
+    background: inherit !important;
+}
+
+/* on hover link color */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] a:hover,
+div[class^="operations"] a {
+    color: var(--link-hover-color) !important;
+    text-decoration: underline;
+}
+
+/* link color */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] a {
+    color: var(--link-color) !important
+}
+/* TODO: genuinely forgot what this was for again */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="content"] {
+    color: #a7a1b0;
+}
+
+/* messages */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] {
+    background: var(--bg-color);
+    font-family: arial, helvetica, sans-serif;
+    font-size: 10pt;
+}
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="message"]>div[class^="container"] {
+    padding: 2px 0px;
+}
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="message"]>div[class^="container"]:last-child {
+    padding-bottom: 18px;
+}
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="message"] {
+    background-color: var(--main-color);
+    border: 1px solid var(--border-color);
+    border-left: none;
+    border-top: none;
+    display: table;
+    padding: 2px;
+    margin: 4px 0 0 1em;
+    overflow: hidden;
+    min-width: 350px;
+    margin-right: 16px;
+    color: var(--text-color);
+}
+/* force font changes inside messages */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="message"] div[class^="header"]>h2>span>strong,
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="message"] div[class^="header"] time,
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="message"] div[class^="markup"] {
+    font-size: 13px;
+}
+/* datetime next to username forces right padding */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="message"] div[class^="header"] time {
+    padding-right: 1rem;
+}
+/* text margin if message is just a message */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="message"]>div[class^="content"] {
+    margin-left: 126px;
+}
+/* text margin if message contains a header (aka where avatar and username) */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="message"]>div[class^="header"]+div[class^="content"] {
+    margin-left: 126px;
+    margin-top: 20px;
+}
+/* force messages from same user to get stuck inside their previous message */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="message"]+div[class^="message"] {
+    margin-top: -1px;
+}
+/* username / timestamp */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="message"] div[class^="header"] time,
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] time[class^="timestamp"][datetime] {
+    color: var(--text-color);
+}
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="message"] div[class^="header"]>h2 {
+    margin-left: 4px;
+    margin-top: 4px;
+}
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="message"] div[class^="header"]>h2>span>strong {
+    font-weight: 700;
+}
+/* reacts */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] span[class^="reactions"]>div[class^="reaction-"] {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="divider"] {
+    height: 24px;
+    padding-top: 4px;
+}
+
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="divider"]::before {
+    background-color: transparent !important;
+}
+
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="divider"]>div {
+    background: none !important;
+    display: none;
+}
+
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="divider"]>div:first-child::after {
+    height: 16px;
+    content: ">be you, browsing discord";
+    display: block;
+}
+
+/* dividers and pin messages */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="divider"]>span::before {
+    content: ">be me, browsing Discord, ";
+}
+
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="divider"]>span {
+    background-color: transparent !important;
+    color: var(--greentext) !important;
+    font-weight: 700;
+    font-size: 14px;
+    display: block;
+    text-transform: lowercase;
+}
+
+/* embeds */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="embedField"],
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="embedFooter"],
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="embedDescription"] {
+    color: var(--text-color) !important;
+}
+
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="embedInner"] {
+    background-color: rgba(30, 30, 30, 0.8) !important;
+    border-width: 0;
+}
+
+/* message text and edit text color */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="message"] div[class^="markup"],
+div[class^="operations"] {
+    color: var(--text-color) !important;
+}
+
+/* avatar in a message, transform those to be like images in the chans :^) */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="header"]>div[class^="wrapper"] {
+    width: 121px;
+    height: 121px;
+    margin: 0;
+}
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="header"]>div[class^="wrapper"]>div[class^="image"] {
+    background-size: cover;
+    background-repeat: none;
+    width: 105px;
+    height: 105px;
+    border-radius: 0px;
+    float: left;
+    margin: 8px;
+}
+
+/* guild invite colour overwrite
+** TODO: make this look a bit better
+*/
+div[class^="guildDetail"] span,
+div[class^="guildName"],
+div[class^="reactionCount"] {
+    color: rgba(246, 246, 247, 0.8) !important;
+}
+div[class^="guildDetail"] i[class^="statusOnline"] {
+    background-color: #50c878;
+}
+/* TODO: is this actually necessary? */
+div[class^="guildDetail"] i[class^="statusOffline"] {
+    background-color: #5088c8;
+}
+
+/* make "edited" indicator like the "user has been banned for this post", visually */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="message"] div[class^="markup"]>time[class^="edited"] {
+    color: var(--link-hover-color);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* make scroll bar square */
+.scroller-wrap .scroller::-webkit-scrollbar-track-piece {
+    border: none;
+    border-radius: 0px;
+}
+
+/* user mentioning */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] span.mention:before {
+    content: ">>";
+}
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] span.mention,
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="isMentioned"] {
+    background: transparent !important;
+    border: none;
+}
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="isMentioned"]::after {
+    background: transparent !important;
+    border: none;
+}
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] span.mention,
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="isMentioned"] span.mention,
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="isMentioned"] span.mention:hover,
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="message"] div[class^="markup"]>span[class^="wrapperHover"][role="button"]:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+/* it is YOU being pinged, yes, you! */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="isMentioned"] span.mention:after {
+    content: " (You)";
+}
+
+/* links to channels in discord */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="message"] div[class^="markup"]>span[class^="wrapperHover"][role="button"]::before {
+    content: ">>>/";
+}
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="message"] div[class^="markup"]>span[class^="wrapperHover"][role="button"] {
+    background: transparent !important;
+}
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="message"] div[class^="markup"]>span[class^="wrapperHover"][role="button"]::after {
+    content: "/";
+}
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="content"]>div[class^="container"] div[class^="icon"] {
+    display: none;
+}
+
+/* discord's joined server / new pin messages */
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="content"]>div[class^="container"] div[class^="icon"]+div[class^="content"]::before {
+    content: "(";
+}
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="content"]>div[class^="container"] div[class^="icon"]+div[class^="content"] {
+    color: var(--link-hover-color);
+    margin-left: 0;
+    padding: 0 10px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: lowercase;
+}
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="content"]>div[class^="container"] div[class^="icon"]+div[class^="content"] * {
+    color: var(--link-hover-color) !important;
+    font-weight: 700;
+    font-size: 14px;
+}
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="content"]>div[class^="container"] div[class^="icon"]+div[class^="content"] time {
+    display: none;
+}
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="content"]>div[class^="container"] div[class^="icon"]+div[class^="content"] a::before {
+    content: ">>"
+}
+div[class^="chat"]>div[class^="content"] div[class^="messagesWrapper"] div[class^="container"]>div[class^="content"]>div[class^="container"] div[class^="icon"]+div[class^="content"]::after {
+    content: ")";
+}
